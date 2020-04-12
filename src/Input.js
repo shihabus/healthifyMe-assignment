@@ -24,14 +24,16 @@ function Input(props) {
     setInput({ value, isValid, errorMessage });
   };
 
+  const clear = () => setInput(initialState);
+
   return (
     <div>
       <input
         ref={el}
-        {...props}
         value={value}
         data-testid="input"
         onChange={handleChange}
+        {...props}
       />
       {!isValid && <p>{errorMessage}</p>}
     </div>
